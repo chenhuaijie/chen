@@ -1,0 +1,107 @@
+# To enable ProGuard in your project, edit project.properties
+# to define the proguard.config property as described in that file.
+#
+# Add project specific ProGuard rules here.
+# By default, the flags in this file are appended to flags specified
+# in ${sdk.dir}/tools/proguard/proguard-android.txt
+# You can edit the include path and order by changing the ProGuard
+# include property in project.properties.
+#
+# For more details, see
+#   http://developer.android.com/guide/developing/tools/proguard.html
+
+# Add any project specific keep options here:
+
+-verbose
+-renamesourcefileattribute BaseActivity.java
+-keepattributes SourceFile,LineNumberTable
+-keepattributes Signature
+
+-keep class sun.misc.Unsafe { *; }
+
+# Explicitly preserve all serialization members. The Serializable interface
+# is only a marker interface, so it wouldn't save them.
+-keepclassmembers class * implements java.io.Serializable {
+    static final long serialVersionUID;
+    private static final java.io.ObjectStreamField[] serialPersistentFields;
+    private void writeObject(java.io.ObjectOutputStream);
+    private void readObject(java.io.ObjectInputStream);
+    java.lang.Object writeReplace();
+    java.lang.Object readResolve();
+}
+
+-keepclasseswithmembers class * {
+    public <init>(android.content.Context, android.util.AttributeSet);
+}
+
+-keepclasseswithmembers class * {
+    public <init>(android.content.Context, android.util.AttributeSet, int);
+}
+
+# XTT data types, gson use reflection to encode and decode.
+-keep class com.opentrans.xtt.** { *; }
+-keep enum com.opentrans.xtt.** { *; }
+-keep interface com.opentrans.xtt.** { *; }
+
+# The official support library.
+-keep class android.support.v4.app.** { *; }
+-keep interface android.support.v4.app.** { *; }
+
+# If your project uses WebView with JS, uncomment the following
+# and specify the fully qualified class name to the JavaScript interface
+# class:
+#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
+#   public *;
+#}
+
+# JPush library
+-dontwarn cn.jpush.**
+-keep class cn.jpush.** { *; }
+
+# Baidu map library
+-keep class com.baidu.** { *; }
+-keep class vi.com.gdi.bgl.android.**{*;}
+
+# ActionBarSherlock
+-keep class com.actionbarsherlock.** { *; }
+-keep interface com.actionbarsherlock.** { *; }
+-keepattributes *Annotation*
+
+# Umeng, add proguard rules, per http://dev.umeng.com/auto-update/android/faq
+-keep public class * extends com.umeng.**
+-keep class com.umeng.** { *; }
+-keep class com.opentrans.driver.R$* { 
+    public static final int umeng_*; 
+    public static final int[] umeng_*;
+}
+
+# logback
+-keep class ch.qos.** { *; }
+-keep class org.slf4j.** { *; }
+
+# ACRA specifics
+
+# keep this class so that logging will show 'ACRA' and not a obfuscated name like 'a'.
+# Note: if you are removing log messages elsewhere in this file then this isn't necessary
+-keep class org.acra.ACRA {
+    *;
+}
+
+-keep class org.acra.ReportingInteractionMode {
+    *;
+}
+
+-keepnames class org.acra.sender.HttpSender$** {
+    *;
+}
+
+-keepnames class org.acra.ReportField {
+    *;
+}
+
+-keep public class org.acra.ErrorReporter {
+    public void addCustomData(java.lang.String,java.lang.String);
+    public void putCustomData(java.lang.String,java.lang.String);
+    public void removeCustomData(java.lang.String);
+    public void handleSilentException(java.lang.Throwable);
+}
