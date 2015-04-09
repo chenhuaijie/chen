@@ -35,14 +35,14 @@ public class LocClient {
 	public static AppPOJO reportPosi(String plate_number) throws HttpException, IOException{
 		
 		
-//    	Client client = new Client(LOC_SERVER) ;
-//    	client.addPathSegment("app");
-//    	client.addPathSegment("findCarByPlateNum.html");
+    	Client client = new Client(LOC_SERVER) ;
+    	client.addPathSegment("app");
+    	client.addPathSegment("findCarByPlateNum.html");
     	Gson gson = new GsonBuilder().setDateFormat(DATE_FOMAT_MS).create();
-//    	client.addUrlParam("plate_num", plate_number);
-//		String resp = client.get();
-//		AppPOJO bResponse = (AppPOJO) gson.fromJson(resp, AppPOJO.class);
-		AppPOJO bResponse = (AppPOJO) gson.fromJson(test_json[random.nextInt(3)], AppPOJO.class);
+    	client.addUrlParam("plate_num", plate_number);
+		String resp = client.get();
+		AppPOJO bResponse = (AppPOJO) gson.fromJson(resp, AppPOJO.class);
+//		AppPOJO bResponse = (AppPOJO) gson.fromJson(test_json[random.nextInt(3)], AppPOJO.class);
     	return bResponse ;
     }
 	 
