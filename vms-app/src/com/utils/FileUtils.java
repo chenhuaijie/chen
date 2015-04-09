@@ -1,4 +1,4 @@
-package com.license.number;
+package com.utils;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;

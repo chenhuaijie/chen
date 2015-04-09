@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-	private static final String DATABASE_NAME = "car.db";
+	private static final String DATABASE_NAME = "appPoJotable.db";
 	private static final int DATABASE_VERSION = 1 ;
 
 	DatabaseHelper(Context context) {
@@ -15,12 +15,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 	@Override
 	public void onCreate(SQLiteDatabase db) {
-		CarTable.create(db);
+		AppPOJOTable.create(db);
 	}
 
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-		CarTable.upgrade(db, oldVersion, newVersion) ;
+		AppPOJOTable.upgrade(db, oldVersion, newVersion) ;
 	}
 
 }

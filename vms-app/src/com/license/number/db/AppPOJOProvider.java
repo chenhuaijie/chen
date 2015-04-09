@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.util.Log;
 
-public class CarProvider extends ContentProvider {
+public class AppPOJOProvider extends ContentProvider {
 	private static final String TAG = "DriverProvider";
 	public static final String AUTHORITY = "com.license.number";
 	private DatabaseHelper helper;
@@ -18,10 +18,10 @@ public class CarProvider extends ContentProvider {
 	private static final int MATCH_ALL_CAR = 1;
 	private static final int MATCH_ONE_CAR = 2;
 
-	public CarProvider() {
+	public AppPOJOProvider() {
 		mUriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
-		mUriMatcher.addURI(AUTHORITY, CarTable.NAME, MATCH_ALL_CAR);
-		mUriMatcher.addURI(AUTHORITY, CarTable.NAME + "/#", MATCH_ONE_CAR);
+		mUriMatcher.addURI(AUTHORITY, AppPOJOTable.NAME, MATCH_ALL_CAR);
+		mUriMatcher.addURI(AUTHORITY, AppPOJOTable.NAME + "/#", MATCH_ONE_CAR);
 	}
 
 	@Override
@@ -38,7 +38,7 @@ public class CarProvider extends ContentProvider {
 		switch (mUriMatcher.match(uri)) {
 		case MATCH_ALL_CAR:
 		case MATCH_ONE_CAR:
-			return CarTable.query(db, uri, projection, selection,
+			return AppPOJOTable.query(db, uri, projection, selection,
 					selectionArgs, sort);
 		default:
 			throw new IllegalArgumentException("Unknown URI " + uri);
@@ -49,9 +49,9 @@ public class CarProvider extends ContentProvider {
 	public String getType(Uri uri) {
 		switch (mUriMatcher.match(uri)) {
 		case MATCH_ALL_CAR:
-			return CarTable.CONTENT_TYPE;
+			return AppPOJOTable.CONTENT_TYPE;
 		case MATCH_ONE_CAR:
-			return CarTable.CONTENT_ITEM_TYPE;
+			return AppPOJOTable.CONTENT_ITEM_TYPE;
 		default:
 			throw new IllegalArgumentException("Unknown URI " + uri);
 		}
@@ -62,7 +62,7 @@ public class CarProvider extends ContentProvider {
 		SQLiteDatabase db = helper.getReadableDatabase();
 		Log.d(TAG, "uri : " + uri);
 		if (mUriMatcher.match(uri) == MATCH_ALL_CAR) {
-			return CarTable.insert(db, getContext(), uri, values);
+			return AppPOJOTable.insert(db, getContext(), uri, values);
 		}else {
 			throw new IllegalArgumentException("Unknown URI " + uri);
 		}
@@ -76,7 +76,7 @@ public class CarProvider extends ContentProvider {
 		switch (mUriMatcher.match(uri)) {
 		case MATCH_ALL_CAR:
 		case MATCH_ONE_CAR:
-			return CarTable.delete(db, getContext(), uri, where, whereArgs);
+			return AppPOJOTable.delete(db, getContext(), uri, where, whereArgs);
 		default:
 			throw new IllegalArgumentException("Unknown URI " + uri);
 		}
@@ -91,7 +91,7 @@ public class CarProvider extends ContentProvider {
 		switch (mUriMatcher.match(uri)) {
 		case MATCH_ALL_CAR:
 		case MATCH_ONE_CAR:
-			return CarTable.update(db, getContext(), uri, values, where,
+			return AppPOJOTable.update(db, getContext(), uri, values, where,
 					whereArgs);
 		default:
 			throw new IllegalArgumentException("Unknown URI " + uri);
