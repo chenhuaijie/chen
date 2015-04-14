@@ -35,6 +35,12 @@ public class SBook implements Serializable{
 	//是否过期
 	private String isexpire;
 	private String isexpireString;
+	
+	//行驶证证载人
+	private String driver ;
+	//备注
+	private String comment ;
+	
 	public String getIdsbook() {
 		return idsbook;
 	}
@@ -113,5 +119,18 @@ public class SBook implements Serializable{
 	public void setIsexpireString(String isexpireString) {
 		this.isexpireString = isexpireString;
 	}
+	public String getDriver() {
+		return driver;
+	}
+	public void setDriver(String driver) {
+		this.driver = driver;
+	}
+	public String getComment() {
+		return comment;
+	}
+	public void setComment(String comment) {
+		this.comment = comment;
+	}
+
 	
 }

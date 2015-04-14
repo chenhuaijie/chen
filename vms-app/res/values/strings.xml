@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">SearchLPN</string>
+    <string name="app_name">宝冶</string>
     <string name="action_settings">Settings</string>
-   
+    <string name="search">Search</string>
+   	<string name="history">History</string>
+   	<string name="not_empty">The license number Can not be empty</string>
 </resources>

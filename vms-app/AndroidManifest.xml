@@ -26,12 +26,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SettingActivity" />
-        <provider
-            android:name=".db.AppPOJOProvider"
-            android:authorities="com.license.number"
-            android:exported="false" >
-        </provider>
     </application>
 
 </manifest>

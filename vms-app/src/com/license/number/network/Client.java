@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.UnsupportedEncodingException;
 import java.net.Socket;
 import java.net.UnknownHostException;
 import java.security.KeyManagementException;
@@ -12,6 +13,7 @@ import java.security.KeyStore;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
 import java.security.UnrecoverableKeyException;
+import java.util.List;
 
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
@@ -20,7 +22,10 @@ import javax.net.ssl.X509TrustManager;
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
@@ -30,6 +35,7 @@ import org.apache.http.entity.FileEntity;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
+import org.json.JSONException;
 
 import android.os.RecoverySystem.ProgressListener;
 import android.util.Log;
@@ -204,7 +210,7 @@ public class Client {
 						outstream.write(tmp, 0, l);
 						if (listener != null) {
 							transfteredBytes += l;
-//							listener.onProgress(transfteredBytes);
+							// listener.onProgress(transfteredBytes);
 						}
 					}
 					outstream.flush();
@@ -228,6 +234,44 @@ public class Client {
 
 		return resp;
 
+	}
+
+	public String sendPost(List<NameValuePair> params) throws Exception {
+
+		String url;
+
+		if (mUrlParam.length() > 0) {
+			url = mAddress + "?" + mUrlParam;
+		} else {
+			url = mAddress;
+		}
+
+		String resp = "";
+
+		Log.v(TAG, "POST " + url);
+
+		// HttpPost连接对象
+		HttpPost httpRequest = new HttpPost(url);
+		// 添加要传递的参数
+		// 设置字符集
+		HttpEntity httpentity;
+		httpentity = new UrlEncodedFormEntity(params, "UTF-8");
+		// 请求httpRequest
+		httpRequest.setEntity(httpentity);
+		// 取得默认的HttpClient
+		HttpClient httpclient = new DefaultHttpClient();
+		// 取得HttpResponse
+		HttpResponse httpResponse = httpclient.execute(httpRequest);
+
+		int code = httpResponse.getStatusLine().getStatusCode();
+		Log.v(TAG, "STATUS " + code + " " + httpResponse.getStatusLine());
+		Log.v(TAG, "RESPONSE " + resp);
+		if (code >= 400) {
+			throw new HttpException(httpResponse.getStatusLine(), resp);
+		} else {
+			resp = EntityUtils.toString(httpResponse.getEntity(), "UTF-8");
+		}
+		return resp;
 	}
 
 	public String post(String request, Header[] headers) throws HttpException,
@@ -267,21 +311,21 @@ public class Client {
 		return resp;
 
 	}
-	
-	public String post(Header[] headers,HttpEntity httpEntity) throws HttpException,
-			IOException {
+
+	public String post(Header[] headers, HttpEntity httpEntity)
+			throws HttpException, IOException {
 		String url;
-		
+
 		if (mUrlParam.length() > 0) {
 			url = mAddress + "?" + mUrlParam;
 		} else {
 			url = mAddress;
 		}
-		
+
 		String resp = "";
-		
+
 		Log.i(TAG, "POST " + url);
-		
+
 		HttpPost post = new HttpPost(url);
 		if (headers != null) {
 			for (Header h : headers) {
@@ -289,23 +333,22 @@ public class Client {
 				post.addHeader(h);
 			}
 		}
-		if(httpEntity!=null)
-			post.setEntity(httpEntity) ;
-		
+		if (httpEntity != null)
+			post.setEntity(httpEntity);
+
 		HttpResponse httpResponse = newHttpClient().execute(post);
 		int code = httpResponse.getStatusLine().getStatusCode();
 		resp = EntityUtils.toString(httpResponse.getEntity(), "UTF-8");
 		Log.v(TAG, "STATUS " + code + " " + httpResponse.getStatusLine());
 		Log.i(TAG, "RESPONSE " + resp);
-		
+
 		if (code >= 400) {
 			throw new HttpException(httpResponse.getStatusLine(), resp);
 		}
-		
+
 		return resp;
-		
-		}
-	
+
+	}
 
 	public boolean delete() throws HttpException, IOException {
 		String url;

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
-    android:background="@color/gray"
+    android:background="@color/light_blue"
     android:orientation="vertical"
     android:padding="1dp" >
 
@@ -83,6 +83,27 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/usedept_llayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal"
+                
+                 >
+				<TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="租用单位：" />
+            <TextView
+                android:id="@+id/use_dept"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="租用单位" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/driver_llayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -91,170 +112,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="left"
-                android:text="创建时间：" />
+                android:text="行驶证证载人：" />
             <TextView
-                android:id="@+id/createdate"
+                android:id="@+id/driver"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="left"
-                android:text="20140920" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/sbook_llayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/khaki"
-            android:orientation="vertical" 
-            android:visibility="gone"
-            >
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="left"
-                android:text="租用信息" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:orientation="horizontal" >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="是否过期：\t\t" />
-
-                <TextView
-                    android:id="@+id/sbook_isexpire"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="sbook_isexpire" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:orientation="horizontal" >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="使用部门：\t\t" />
-
-                <TextView
-                    android:id="@+id/sbook_usedept"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="sbook_usedept" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:orientation="horizontal" >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="开始日期：\t\t" />
-
-                <TextView
-                    android:id="@+id/sbook_startdate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="sbook_startdate" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:orientation="horizontal" >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="结束日期：\t\t" />
-
-                <TextView
-                    android:id="@+id/sbook_enddate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="sbook_enddate" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/user_llayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/pale_golden_rod"
-            android:orientation="vertical" 
-            android:visibility="gone">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="left"
-                android:text="维护人员信息" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:orientation="horizontal" >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="所在部门：\t" />
-
-                <TextView
-                    android:id="@+id/user_dept"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="user_dept" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:orientation="horizontal" >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="昵称\t\t：" />
-
-                <TextView
-                    android:id="@+id/user_nickname"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="user_nickname" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:orientation="horizontal" >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="联系方式：" />
-
-                <TextView
-                    android:id="@+id/user_phonenum"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="user_phonenumber" />
+                android:text="证载人" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
