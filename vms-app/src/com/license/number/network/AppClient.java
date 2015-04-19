@@ -30,8 +30,8 @@ public class AppClient {
 		List<NameValuePair> params = new ArrayList<NameValuePair>();
 		params.add(new BasicNameValuePair("plate_num", plate_number));
 
-		String resp = client.sendPost(params);
-//		String resp = test_json1;
+//		String resp = client.sendPost(params);
+		String resp = test_json1;
 		Gson gson = new GsonBuilder().setDateFormat(DATE_FOMAT_MS).create();
 		AppEJB bResponse = (AppEJB) gson.fromJson(resp, AppEJB.class);
 		return bResponse;
@@ -41,7 +41,7 @@ public class AppClient {
 			"{" +
 				"\"cars\":[" +
 					"{" +
-						"\"book\":{\"carid\":\"6cfa4eab-6be3-4324-8b1d-078026d1d3c0\",\"comment\":\"4343\",\"driver\":\"43434\",\"enddate\":\"2015-04-15 00:00:00\",\"idsbook\":\"271aea26-554a-429f-92e5-997ce352cc38\",\"isexpire\":\"N\",\"lease\":\"4343\",\"lessee\":\"4343\",\"startdate\":\"2015-04-07 00:00:00\",\"usedept\":\"4343\",\"userid\":\"133ec7b7-ae09-422c-8147-3baf6abc2a84\"}," +
+						"\"book\":{\"carid\":\"6cfa4eab-6be3-4324-8b1d-078026d1d3c0\",\"comment\":\"4343\",\"driver\":\"43434\",\"enddate\":\"2015-04-15 00:00:00\",\"idsbook\":\"271aea26-554a-429f-92e5-997ce352cc38\",\"isexpire\":\"N\",\"lease\":\"4343\",\"lessee\":\"434311\",\"startdate\":\"2015-04-07 00:00:00\",\"usedept\":\"4343\",\"userid\":\"133ec7b7-ae09-422c-8147-3baf6abc2a84\"}," +
 						"\"car\":{\"carid\":\"6cfa4eab-6be3-4324-8b1d-078026d1d3c0\",\"name\":\"荣威\",\"origin\":\"CT01\",\"plate_num\":\"你-9999\",\"status\":\"Y\",\"type\":\"safas\"}," +
 						"\"user\":{\"company\":\"3232\",\"dept\":\"3232\",\"name\":\"nick\"}}," +
 					"{\"car\":{\"carid\":\"946b6a84-b523-4d73-ad17-620f22bad3a3\",\"name\":\"奔驰\",\"origin\":\"CT02\",\"plate_num\":\"沪A-9999\",\"status\":\"N\",\"type\":\"SUV\"}}," +

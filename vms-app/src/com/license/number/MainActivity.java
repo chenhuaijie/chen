@@ -167,7 +167,7 @@ public class MainActivity extends SherlockFragmentActivity {
 					holder.driver_lLayout.setVisibility(View.VISIBLE);
 					holder.sbook_driver.setText(appPOJO.getBook().getDriver());
 					holder.usedept_llayout.setVisibility(View.VISIBLE);
-					holder.lessee.setText(appPOJO.getBook().getLease());
+					holder.lessee.setText(appPOJO.getBook().getLessee());
 				}else {
 					holder.driver_lLayout.setVisibility(View.GONE);
 					holder.usedept_llayout.setVisibility(View.GONE);
