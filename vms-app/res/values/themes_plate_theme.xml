@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Generated with http://android-holo-colors.com -->
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <style name="plate_Theme" parent="@style/_plate_Theme"/>
+
+  <style name="_plate_Theme" parent="Theme.Sherlock.Light">
+
+    <item name="android:editTextStyle">@style/EditTextplate_Theme</item>
+
+    <item name="android:textColorHighlight">#990099cc</item>
+
+    <item name="android:autoCompleteTextViewStyle">@style/AutoCompleteTextViewplate_Theme</item>
+
+    <item name="android:checkboxStyle">@style/CheckBoxplate_Theme</item>
+
+    <item name="android:radioButtonStyle">@style/RadioButtonplate_Theme</item>
+
+    <item name="android:buttonStyle">@style/Buttonplate_Theme</item>
+
+    <item name="android:imageButtonStyle">@style/ImageButtonplate_Theme</item>
+
+    <item name="android:spinnerStyle">@style/Spinnerplate_Theme</item>
+
+    <item name="android:spinnerDropDownItemStyle">@style/SpinnerDropDownItemplate_Theme</item>
+
+    <item name="android:progressBarStyleHorizontal">@style/ProgressBarplate_Theme</item>
+
+    <item name="android:seekBarStyle">@style/SeekBarplate_Theme</item>
+
+    <item name="android:ratingBarStyle">@style/RatingBarplate_Theme</item>
+
+    <item name="android:ratingBarStyleIndicator">@style/RatingBarBigplate_Theme</item>
+
+    <item name="android:ratingBarStyleSmall">@style/RatingBarSmallplate_Theme</item>
+
+    <item name="android:buttonStyleToggle">@style/Toggleplate_Theme</item>
+
+    <item name="android:listViewStyle">@style/ListViewplate_Theme</item>
+
+    <item name="android:listViewWhiteStyle">@style/ListViewplate_Theme.White</item>
+
+    <item name="android:spinnerItemStyle">@style/SpinnerItemplate_Theme</item>
+
+  </style>
+
+</resources>

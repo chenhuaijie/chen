@@ -94,13 +94,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="left"
-                android:text="租用单位：" />
+                android:text="承租方：" />
             <TextView
-                android:id="@+id/use_dept"
+                android:id="@+id/lessee"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="left"
-                android:text="租用单位" />
+                android:text="承租方" />
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/driver_llayout"

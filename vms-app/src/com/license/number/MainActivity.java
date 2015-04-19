@@ -106,7 +106,7 @@ public class MainActivity extends SherlockFragmentActivity {
 		public TextView sbook_driver ;
 
 		public LinearLayout usedept_llayout;
-		public TextView user_dept;
+		public TextView lessee;
 	}
 	
 	public class BookBaseAdpter extends BaseAdapter{
@@ -167,7 +167,7 @@ public class MainActivity extends SherlockFragmentActivity {
 					holder.driver_lLayout.setVisibility(View.VISIBLE);
 					holder.sbook_driver.setText(appPOJO.getBook().getDriver());
 					holder.usedept_llayout.setVisibility(View.VISIBLE);
-					holder.user_dept.setText(appPOJO.getBook().getUsedept());
+					holder.lessee.setText(appPOJO.getBook().getLease());
 				}else {
 					holder.driver_lLayout.setVisibility(View.GONE);
 					holder.usedept_llayout.setVisibility(View.GONE);
@@ -179,7 +179,6 @@ public class MainActivity extends SherlockFragmentActivity {
 	}
 	private void initHolder(View view){
 		ViewHolder holder = new ViewHolder();
-		holder.user_dept = (TextView) view.findViewById(R.id.use_dept );
 		
 		holder.car_lLayout = (LinearLayout) view
 				.findViewById(R.id.car_llayout);
@@ -192,7 +191,7 @@ public class MainActivity extends SherlockFragmentActivity {
 		holder.sbook_driver =(TextView)view.findViewById(R.id.driver);
 		
 		holder.usedept_llayout = (LinearLayout)view.findViewById(R.id.usedept_llayout) ;
-		holder.user_dept = (TextView)view.findViewById(R.id.use_dept);
+		holder.lessee = (TextView)view.findViewById(R.id.lessee);
 		
 		view.setTag(holder);
 	}

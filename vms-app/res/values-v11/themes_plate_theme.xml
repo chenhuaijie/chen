@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Generated with http://android-holo-colors.com -->
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <style name="plate_Theme" parent="@style/_plate_Theme"/>
+
+  <style name="_plate_Theme" parent="android:Theme.Holo.Light">
+
+    <item name="android:editTextBackground">@drawable/plate_theme_edit_text_holo_light</item>
+
+    <item name="android:textColorHighlight">#990099cc</item>
+    <item name="android:textSelectHandleLeft">@drawable/plate_theme_text_select_handle_left</item>
+    <item name="android:textSelectHandleRight">@drawable/plate_theme_text_select_handle_right</item>
+    <item name="android:textSelectHandle">@drawable/plate_theme_text_select_handle_middle</item>
+
+    <item name="android:autoCompleteTextViewStyle">@style/AutoCompleteTextViewplate_Theme</item>
+
+    <item name="android:listChoiceIndicatorMultiple">@drawable/plate_theme_btn_check_holo_light</item>
+
+    <item name="android:listChoiceIndicatorSingle">@drawable/plate_theme_btn_radio_holo_light</item>
+
+    <item name="android:buttonStyle">@style/Buttonplate_Theme</item>
+
+    <item name="android:imageButtonStyle">@style/ImageButtonplate_Theme</item>
+
+    <item name="android:dropDownSpinnerStyle">@style/Spinnerplate_Theme</item>
+
+    <item name="android:progressBarStyleHorizontal">@style/ProgressBarplate_Theme</item>
+
+    <item name="android:seekBarStyle">@style/SeekBarplate_Theme</item>
+
+    <item name="android:ratingBarStyle">@style/RatingBarplate_Theme</item>
+
+    <item name="android:ratingBarStyleIndicator">@style/RatingBarBigplate_Theme</item>
+
+    <item name="android:ratingBarStyleSmall">@style/RatingBarSmallplate_Theme</item>
+
+    <item name="android:buttonStyleToggle">@style/Toggleplate_Theme</item>
+
+    <item name="android:listChoiceBackgroundIndicator">@drawable/plate_theme_list_selector_holo_light</item>
+
+    <item name="android:activatedBackgroundIndicator">@drawable/plate_theme_activated_background_holo_light</item>
+
+    <item name="android:fastScrollThumbDrawable">@drawable/plate_theme_fastscroll_thumb_holo</item>
+
+  </style>
+
+</resources>

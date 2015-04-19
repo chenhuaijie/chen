@@ -12,8 +12,9 @@ import com.google.gson.GsonBuilder;
 import com.license.number.entity.AppEJB;
 
 public class AppClient {
+//	private static String LOC_SERVER = "http://192.168.1.102:8080/VMSWEB";
+	
 	private static String LOC_SERVER = "http://10.0.0.173:8080/VMSWEB";
-
 	// 2015-04-22 00:00:00
 	public static final String DATE_FOMAT_MS = "yyyy-MM-dd HH:mm:ss";
 
@@ -30,7 +31,7 @@ public class AppClient {
 		params.add(new BasicNameValuePair("plate_num", plate_number));
 
 		String resp = client.sendPost(params);
-//		 String resp = Test_JSON[random.nextInt(2)];
+//		String resp = test_json1;
 		Gson gson = new GsonBuilder().setDateFormat(DATE_FOMAT_MS).create();
 		AppEJB bResponse = (AppEJB) gson.fromJson(resp, AppEJB.class);
 		return bResponse;
@@ -49,10 +50,13 @@ public class AppClient {
 				"}]," +
 				"\"exists\":true" +
 			"}";
-	public static final String test_json2 = 
-			"{" +
-				"\"exists\":false" +
-			"}";
-	public static final  String[] Test_JSON ={test_json1,test_json2};
+//	public static final String test_json2 = 
+//			"{" +
+//				"\"exists\":false" +
+//			"}";
+//	public static final  String[] Test_JSON ={test_json1,test_json2};
 
 }
+
+
+
