@@ -8,7 +8,7 @@ import com.license.number.enums.enumi.ValueIEnum;
 
 /**
  * 枚举类的工具类
- * 我是作者 你们好
+ * 我是作者 啦啦啦啦啦拉阿拉蕾
  */
 public class EnumUtil{
 	
