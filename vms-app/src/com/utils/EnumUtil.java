@@ -8,7 +8,7 @@ import com.license.number.enums.enumi.ValueIEnum;
 
 /**
  * 枚举类的工具类
- *
+ * 我是作者 你们好
  */
 public class EnumUtil{
 	
@@ -25,7 +25,7 @@ public class EnumUtil{
 	    for (ValueIEnum<String> em : list) {
 	      if (((String)em.getEnValue()).equals(value)) {
 	        return (T)em;
-	      }
+	      }    
 	    }
 	    return null;
 	}
