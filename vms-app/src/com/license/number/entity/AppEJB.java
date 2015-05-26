@@ -3,14 +3,14 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * AppEJB实体类
+ * AppEJB实体类 又改了一点
  * @author Administrator
  *
  */
 public class AppEJB implements Serializable{
 	private static final long serialVersionUID = -360620372587821399L;
 	private boolean exists;
-	private List<AppPOJO> cars;
+	private List<AppPOJO> cars;   
 	
 	public boolean isExists() {
 		return exists;
