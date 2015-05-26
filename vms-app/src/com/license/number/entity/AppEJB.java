@@ -2,6 +2,11 @@ package com.license.number.entity;
 import java.io.Serializable;
 import java.util.List;
 
+/**
+ * AppEJB实体类
+ * @author Administrator
+ *
+ */
 public class AppEJB implements Serializable{
 	private static final long serialVersionUID = -360620372587821399L;
 	private boolean exists;
